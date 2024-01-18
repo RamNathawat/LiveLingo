@@ -18,10 +18,10 @@ def translate():
 
 # Create the main window
 root = Tk()
-root.geometry('1100x400')  # Set the window size
-root.resizable(0, 0)  # Disable window resizing
-root['bg'] = '#14213D'  # Set background color
-root.title('LiveLingo - Simple Language Translator')  # Set window title
+root.geometry('1100x400')  
+root.resizable(0, 0)  
+root['bg'] = '#14213D'  
+root.title('LiveLingo - Simple Language Translator')
 
 # Create a label for the title
 title_label = Label(root, text="Language Translator", font="Manrope 20 bold", bg='#14213D')
@@ -51,7 +51,7 @@ language = list(LANGUAGES.values())
 # Create a Combobox for selecting the destination language
 dest_lang = ttk.Combobox(root, values=language, width=22)
 dest_lang.pack(pady=10)
-dest_lang.set('Choose Language')  # Set default value
+dest_lang.set('Choose Language')  
 
 # Add a status bar
 status_bar = Label(root, text="Ready", bd=1, relief=SUNKEN, anchor=W)
