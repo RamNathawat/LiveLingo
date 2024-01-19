@@ -7,12 +7,18 @@ def translate():
         # Create a Translator object
         translator = Translator()
 
-        # Translate the input text to the selected destination language
-        translation = translator.translate(Input_text.get("1.0", END), dest=dest_lang.get())
+        # Get the input text from the Text widget
+        input_text = Input_text.get("1.0", END).strip()
 
-        # Clear the output text and insert the translation
-        Output_text.delete(1.0, END)
-        Output_text.insert(END, translation.text)
+        if input_text:  # Check if input_text is not empty
+            # Translate the input text to the selected destination language
+            translation = translator.translate(input_text, dest=dest_lang.get())
+
+            # Clear the output text and insert the translation
+            Output_text.delete(1.0, END)
+            Output_text.insert(END, translation.text)
+        else:
+            update_status_bar("Please enter text to translate.")
     except Exception as e:
         print(f"Translation error: {e}")
 
